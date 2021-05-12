@@ -66,7 +66,7 @@ namespace UnivisionServicesVideosApi.Controllers
                     Video video = new Video()
                     {
                         ThumbnailPath = thumbnailName,
-                        Title = "Video",
+                        Title = file.FileName,
                         VideoPath = name
                     };
                     await _videosService.CreateVideo(video);
