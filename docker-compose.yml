@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  univisionservicesvideosapi:
+    image: ${DOCKER_REGISTRY-}univisionservicesvideosapi
+    build:
+      context: .
+      dockerfile: UnivisionServicesVideosApi/Dockerfile
