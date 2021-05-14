@@ -42,13 +42,13 @@ namespace UnivisionServicesVideosApi.Controllers
 
         
             // Basic validation on mime types and file extension
-            string[] videoMimetypes = { "video/mp4", "video/webm", "video/ogg" };
-            string[] videoExt = { ".mp4", ".webm", ".ogg" };
+            //string[] videoMimetypes = { "video/mp4", "video/webm", "video/ogg" };
+            //string[] videoExt = { ".mp4", ".webm", ".ogg", ".mov" };
 
             try
             {
-                if (Array.IndexOf(videoMimetypes, mimeType) >= 0 && (Array.IndexOf(videoExt, extension) >= 0))
-                {
+                //if (Array.IndexOf(videoMimetypes, mimeType) >= 0 && (Array.IndexOf(videoExt, extension) >= 0))
+                //{
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "videos", name);
 
                     using (var bits = new FileStream(path, FileMode.Create))
@@ -72,8 +72,8 @@ namespace UnivisionServicesVideosApi.Controllers
                     await _videosService.CreateVideo(video);
 
                     return Json(name);
-                }
-                throw new ArgumentException("The video did not pass the validation");
+                //}
+                //throw new ArgumentException("The video did not pass the validation");
             }
 
             catch (ArgumentException ex)
